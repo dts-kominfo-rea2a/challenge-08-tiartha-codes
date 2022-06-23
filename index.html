@@ -5,22 +5,23 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style.css">
   <title>Challenge - DOM</title>
 </head>
 
 <body>
   <div id="app">
     <!-- TODO: Buatlah sebuah header dengan id todo-title -->
-    <h1 id="todo-title">To-Do List</h1>
+    <h1 id="todo-title">SIMPLE TO-DO LIST</h1>
     <!-- TODO: Buatlah sebuah subtitle dengan id todo-subtitle -->
-    <h2 id="todo-subtitle">~ Today i need to ~</h2>
+    <h2 id="todo-subtitle">Today i need to :</h2>
 
     <!-- Section: input -->
     <section>
       <!-- TODO: Buatlah sebuah input bertipe text dengan id todo-input -->
-      <input id="todo-input" type="text" name="input" placeholder="Please input your planing list!"><br><br>
+      <input id="todo-input" type="text" name="input" placeholder="add your to-do list here!">
       <!-- TODO: Buatlah sebuah button dengan id todo-submit -->
-      <input id="todo-submit" type="button" value="Submit">
+      <button id="todo-submit" type="button">Add List</button>
     </section>
 
     <!-- Section output -->
@@ -36,7 +37,8 @@
     let button;
     let input;
     let output;
-    let keypressBtn;
+    // Penambahan variabel baru "keypressBtnEnter" untuk fungsi tambah list di field input
+    let keypressBtnEnter;
 
     // TODO: Buatlah sebuah fungsi dengan nama fnClickHandler
     // Fungsi yang digunakan untuk menambahkan tulisan
@@ -61,10 +63,10 @@
 
 
     // TODO: register event onkeypress / addEventListener untuk input
-    keypressBtn = document.getElementById('todo-input');
+    keypressBtnEnter = document.getElementById('todo-input');
 
     // sehingga saat di input ditekan enter akan menjalankan fungsi fnClickHandler juga
-    keypressBtn.addEventListener('keypress', (event) => {
+    keypressBtnEnter.addEventListener('keypress', (event) => {
       if (event.key === 'Enter' || event.keyCode == 13) {
         fnClickHandler()
       }
